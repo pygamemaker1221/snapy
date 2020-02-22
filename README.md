@@ -1,16 +1,16 @@
 # SnaPy
 
-Простая змейка написанная с помощью Pygame.
+Simple snake game written on Pygame.
 
-### Установка
+### Install
 
-- [Скачать](https://github.com/wultes/snapy/archive/master.zip) или склонировать репозиторий используя команду в командной строке:
+- [Download](https://github.com/wultes/snapy/archive/master.zip) or clone repo:
 
   ```bash
   git clone https://github.com/wultes/snapy
   ```
 
-- Установить ```pygame``` (Если у вас уже установлен, то можно пропустить этот пункт):
+- Install ```pygame``` (If installed, skip):
 
   ```bash
   pip install -r requirements.txt --upgrade
@@ -18,9 +18,9 @@
 
    
 
-### Запуск 
+### Start 
 
-Для запуска игры введите следующую команду, находясь в директории игры :
+For start game enter the command while in the game directory :
 
 ```bash
 python run.py
@@ -28,7 +28,8 @@ python run.py
 
 
 
-### Лицензия
+### License
 
-Данный репозиторий использует лицензию [MIT](https://choosealicense.com/licenses/mit/)
+This repository using license [MIT](https://choosealicense.com/licenses/mit/)
 Copyright © 2020 [Wultes](https://github.com/wultes/).
+
