@@ -14,7 +14,7 @@ class MainGame:
         self.height = 500
         self.rows = 20
         self.window = pygame.display.set_mode((self.width, self.height))
-        self.caption = 'SnakePy'
+        self.caption = 'SnaPy'
         self.player = Snake((255,0,0), (10,10))
         self.menu_font =  pygame.font.Font('fonts/menu_font.ttf', 24)
         self.name_font = pygame.font.Font('fonts/name_font.ttf', 30)
@@ -65,6 +65,7 @@ class MainGame:
 
     def menuGame(self):
         try:
+            pygame.display.set_caption(self.caption)
             print('Created by Wultes - https://github.com/wultes/')
             run = True
 
@@ -83,6 +84,7 @@ class MainGame:
 
     def runGame(self):
         try:
+            pygame.display.set_caption(self.caption)
             run = True
 
             clock = pygame.time.Clock()
