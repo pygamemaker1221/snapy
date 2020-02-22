@@ -30,6 +30,6 @@ python run.py
 
 ### License
 
-This repository using license [MIT](https://choosealicense.com/licenses/mit/)
+This repository using license [MIT](https://choosealicense.com/licenses/mit/)  
 Copyright © 2020 [Wultes](https://github.com/wultes/).
 
