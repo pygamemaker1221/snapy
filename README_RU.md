@@ -13,7 +13,7 @@
 - Установить ```pygame``` (Если у вас уже установлен, то можно пропустить этот пункт):
 
   ```bash
-  pip install -r requirements.txt --upgrade
+  pip install pygame
   ```
 
    
