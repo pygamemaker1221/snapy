@@ -5,8 +5,10 @@ from pygame.locals import *
 
 from models.snake import Snake
 from models.cube import Cube
+from models.menu import MenuGame
 
 pygame.init()
+
 
 class MainGame:
     def __init__(self):
@@ -15,7 +17,8 @@ class MainGame:
         self.rows = 20
         self.window = pygame.display.set_mode((self.width, self.height))
         self.caption = 'SnaPy'
-        self.player = Snake((255,0,0), (10,10))
+        self.color = (255,0,0)
+        self.player = Snake(self.color, (10,10))
         self.menu_font =  pygame.font.Font('fonts/menu_font.ttf', 24)
         self.name_font = pygame.font.Font('fonts/name_font.ttf', 30)
         self.cre_by = pygame.font.Font('fonts/menu_font.ttf', 14)
@@ -27,32 +30,17 @@ class MainGame:
         textobj = self.score_font.render('Score: {0}'.format(self.score), 1, (0,0,0))
         textreact = textobj.get_rect()
         textreact.topleft = (10, 10)
-        self.window.blit(textobj, textreact) 
+        self.window.blit(textobj, textreact)
 
-    def drawText(self, text, color, x, y, font):
-        textobj = font.render(text, 1, color)
-        textreact = textobj.get_rect()
-        textreact.topleft = (x, y)
-        self.window.blit(textobj, textreact) 
-
-    def redrawGameWindow(self):
+    def draw(self):
         self.window.fill((255,255,255))
         self.player.draw(self.window)
         self.snack.draw(self.window)
         self.drawScore()
         pygame.display.update()
 
-    def redrawMenuWindow(self):
-        self.window.fill((255,255,255))
-        self.drawText('SnaPy', (0,0,0), 165, 50, self.name_font)
-        self.drawText('Press SPACE to start', (0,0,0), 115, 200, self.menu_font)
-        self.drawText('Move: WASD/keys', (0,0,0), 130, 250, self.menu_font)
-        self.drawText('Created by Wultes', (0,0,0), 330, 450, self.cre_by)
-        pygame.display.update()
-
     def randomSnack(self):
         positions = self.player.body
-
         while True:
             x = random.randrange(self.rows)
             y = random.randrange(self.rows)
@@ -65,8 +53,7 @@ class MainGame:
 
     def menuGame(self):
         try:
-            pygame.display.set_caption(self.caption)
-            print('Created by Wultes - https://github.com/wultes/')
+            menu = MenuGame()
             run = True
 
             while run:
@@ -77,8 +64,8 @@ class MainGame:
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_SPACE:
                             self.runGame()
-
-                self.redrawMenuWindow()
+                
+                menu.draw(self.window)
         except:
             pass
 
@@ -104,8 +91,8 @@ class MainGame:
                         self.score = 0
                         self.player.reset((10, 10))
                         break
-                
-                self.redrawGameWindow()
+                    
+                self.draw()
         except:
             pass
             
