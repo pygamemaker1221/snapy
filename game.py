@@ -53,6 +53,7 @@ class MainGame:
 
     def menuGame(self):
         try:
+            pygame.display.set_caption(self.caption)
             menu = MenuGame()
             run = True
 
@@ -91,8 +92,9 @@ class MainGame:
                         self.score = 0
                         self.player.reset((10, 10))
                         break
-                    
+
                 self.draw()
         except:
             pass
+    
             
