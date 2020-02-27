@@ -13,7 +13,7 @@ Simple snake game written on Pygame.
 - Install ```pygame``` (If installed, skip):
 
   ```bash
-  pip install -r requirements.txt --upgrade
+  pip install pygame
   ```
 
    
